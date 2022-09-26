@@ -26,21 +26,6 @@ module.exports.initialize=function(){
         if (flag1 && flag2) resolve('operation was a success');
         else reject("unable to read file.")
     });
-
-        
-    // return new Promise((resolve,reject)=>{
-    //     fs.readFile('./data/categories.json', (err, data) => {
-    //         if (err){
-    //             reject();
-    //         } 
-    //         else{
-    //             categories = JSON.parse(data);
-    //             resolve();
-    //         }
-    //     });
-    // });
-    // var posts = require("./data/posts.json");
-    // var categories = require("./data/categories.json");
 }
 module.exports.getAllPosts=function(){
     return new Promise((resolve,reject)=>{
