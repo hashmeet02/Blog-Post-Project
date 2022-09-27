@@ -3,13 +3,12 @@
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: ______________________ Student ID: ______________ Date: ________________
+*  Name: Hashmeet Singh Saini    Student ID: 153070214       Date: 26 Septemeber 2022
 *
-*  Online (Cyclic) Link: ________________________________________________________
+*  Online (Cyclic) Link: https://hungry-pleat-seal.cyclic.app/about
 *
 ********************************************************************************/ 
-var b
-log_service=require("./blog-service")
+var blog_service=require("./blog-service")
 var express=require("express");
 
 var path=require("path")
