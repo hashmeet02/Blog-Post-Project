@@ -9,7 +9,7 @@
       <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
       <link rel="stylesheet" href="https://bootswatch.com/3/cyborg/bootstrap.min.css" />
       <link rel="stylesheet" href="/css/main.css">
-      <title>About</title>
+      <title>Hashmeet Singh Saini's Blog</title>
   </head>
   <body>
     
@@ -29,33 +29,23 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/blog">Blog</a></li>
-            <li class="active"><a href="/about">About</a></li>
+            {{#navLink "/blog"}}Blog{{/navLink}}
+            {{#navLink "/about"}}About{{/navLink}}
+            {{!-- <li class="active"><a href="/about">About</a></li> --}}
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/posts">Posts</a></li>
+            {{#navLink "/posts"}}Posts{{/navLink}}
+            {{#navLink "/categories"}}Categories{{/navLink}}
+            {{#navLink "/posts/add"}}Add Post{{/navLink}}
+            {{!-- <li><a href="/posts">Posts</a></li>
             <li><a href="/categories">Categories</a></li>
-            <li><a href="/posts/add">Add Post</a></li>            
+            <li><a href="/posts/add">Add Post</a></li>             --}}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container" style="padding-top:60px">
-      <div class="row">
-        <section class="main col-md-9">
-          <article>
-          <h2>About</h2>
-          <p>Hey!</p>
-          <p>This is Hashmeet Singh Saini. I am a High School graduate from India, pursuing Advanced Diploma in Computer Programming and Analysis at Seneca</p>
-          <p>I am a student with a passion for coding and is deeply interested in th Information and Technology world. Apart from that I am also have various other hobbies like sketching, listening to music, photography and watching movies</p>
-          <p>My ultimate goal is to keep learning new programming languages and grow in the software engineering industry to secure jobs in the biggest IT companies like Apple, Amazon, Microsoft and more.</p>
-          </article>
-        </section>
-        <aside class="col-md-3">
-          <h2>Coming Soon</h2>
-          <p>Stay tuned for the exciting updates and features coming very soon.</p>
-        </aside>
-      </div>
+      {{{body}}}
     </div>
 
     <!-- Latest compiled and minified jQuery 3.6.0 JavaScript -->

@@ -68,22 +68,16 @@ module.exports.addPost=function (postData){
         // }
         postData.id=posts.length +1;
         postData.published=(postData.published)? true:false;
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '/' + mm + '/' + dd;
+        postData.postDate=toady;
         posts.push(postData);
         resolve();
         console.log("added post");
     });
-}
-
-module.exports.getPostsByCategory=function(category){
-    return new Promise((resolve,reject)=>{
-        let catPosts=posts.filter((post)=>post.category==category);
-        if(catPosts.length==0){
-            reject("no results returned");
-        }
-        else{
-            resolve(catPosts);
-        }
-    })
 }
 
 module.exports.getPostsByCategory=function(category){
@@ -125,14 +119,16 @@ module.exports.getPostById=function(id){
         }
     })
 }
-// module.exports.getPostsByMinDate=function(minDate){
-//     return new Promise((resolve,reject)=>{
-//         let minDatePosts=posts.filter((post)=>post.category==category);
-//         if(publishedPosts.length==0){
-//             reject("no results returned");
-//         }
-//         else{
-//             resolve(publishedPosts);
-//         }
-//     })
-// }
+
+module.exports.getPublishedPostsByCategory=function(category){
+    return new Promise((resolve,reject)=>{
+        let publishedPosts=posts.filter((post)=>post.published===true);
+        let publishedCatPosts=publishedPosts.filter((publishedPost)=>publishedPost.category==category);
+        if(publishedCatPosts.length==0){
+            reject("no results returned");
+        }
+        else{
+            resolve(publishedCatPosts);
+        }
+    })
+}
