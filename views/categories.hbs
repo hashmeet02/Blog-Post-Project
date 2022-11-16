@@ -1,17 +1,16 @@
 <div class="row">
-    {{!-- <div class="col-md-12">
-          <h2>Categories</h2>
-          <hr />
-          {{#each categories}}
-            <p>{{id}} {{category}}</p>
-          {{/each}}
-    </div> --}}
+    <h2>
+        Categories
+        <a href="/categories/add" class="btn btn-success pull-right">Add Category</a>    
+    </h2>
+    <hr />
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
                     <th>Category&nbsp;ID</th>
                     <th>Category&nbsp;name</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +18,7 @@
                     <tr>
                         <td><a href="/posts?category={{id}}">{{id}}</a></td>
                         <td><a href="/posts?category={{id}}">{{category}}</a></td>
+                        <td><a href="/categories/delete/{{id}}" class="btn btn-danger pull-right">remove</a></td>
                     </tr>
                 {{/each}}
             </tbody>
